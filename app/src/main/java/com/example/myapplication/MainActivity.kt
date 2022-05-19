@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun init () {
         binding.apply{
-            recyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
+            recyclerView.layoutManager = GridLayoutManager(this@MainActivity, 2)
             recyclerView.adapter = adapter
             buttonAdd.setOnClickListener {
                 if (index > 7) index = 0
