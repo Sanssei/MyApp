@@ -30,6 +30,12 @@ class MainActivity : AppCompatActivity() {
                 adapter.addSmile(smile)
                 index++
             }
+            buttonRemoved.setOnClickListener{
+                if (index > 7 ) index =0
+                adapter.removeListItem(index)
+                if (index == 0) index = 7
+                index--
+            }
         }
     }
 }

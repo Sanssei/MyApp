@@ -31,4 +31,12 @@ class SmileAdapter: RecyclerView.Adapter<SmileAdapter.SmileHolder>() {
         smileList.add(smile)
         notifyDataSetChanged() //Refresh Adapter 
     }
+
+    fun removeListItem(position : Int) {
+        if (smileList.size>0) {
+            notifyItemRemoved(position)
+            smileList.removeAt(smileList.size - 1)
+            notifyDataSetChanged()
+        }
+    }
 }

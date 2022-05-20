@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">My Application</string>
-    <string name="button_smile_text">Add Smile</string>
+    <string name="button_add">Add Smile</string>
+    <string name="button_removed">Removed Smile</string>
 </resources>
