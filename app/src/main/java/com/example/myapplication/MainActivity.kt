@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
     private val adapter = SmileAdapter()
     private val imageIdList = listOf(R.drawable.smile1, R.drawable.smile2, R.drawable.smile3,
         R.drawable.smile4, R.drawable.smile5, R.drawable.smile6, R.drawable.smile7,
-        R.drawable.smile8)
+        R.drawable.smile8, R.drawable.view1)
     private var index = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,15 +25,15 @@ class MainActivity : AppCompatActivity() {
             recyclerView.layoutManager = GridLayoutManager(this@MainActivity, 2)
             recyclerView.adapter = adapter
             buttonAdd.setOnClickListener {
-                if (index > 7) index = 0
+                if (index > 8) index = 0
                 val smile = Smile(imageIdList[index], "Smile $index")
                 adapter.addSmile(smile)
                 index++
             }
             buttonRemoved.setOnClickListener{
-                if (index > 7 ) index =0
+                if (index > 8 ) index =0
                 adapter.removeListItem(index)
-                if (index == 0) index = 7
+                if (index == 0) index = 8
                 index--
             }
         }
