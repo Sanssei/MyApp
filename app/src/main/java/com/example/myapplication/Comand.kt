@@ -1,4 +1,5 @@
 package com.example.myapplication
-interface Comand {
-    public fun execute()
+interface Command {
+    fun execute()
+    fun unDo()
 }

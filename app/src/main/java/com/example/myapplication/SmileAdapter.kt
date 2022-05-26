@@ -3,15 +3,16 @@ package com.example.myapplication
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.databinding.SmileItemBinding
 
 class SmileAdapter: RecyclerView.Adapter<SmileAdapter.SmileHolder>() {
-    val smileList = ArrayList<Smile>()
+    var smileList = mutableListOf<Smile>()
     class SmileHolder(item: View): RecyclerView.ViewHolder(item){
         val binding = SmileItemBinding.bind(item)
         fun bind(smile: Smile) = with(binding){
-            imageSmale.setImageResource(smile.imageId)
+            imageSmale.setImageResource(smile.imageResId)
             textSmile.text = smile.title
         }
     }
@@ -29,14 +30,16 @@ class SmileAdapter: RecyclerView.Adapter<SmileAdapter.SmileHolder>() {
 
     fun addSmile(smile: Smile) {
         smileList.add(smile)
+        println("Adapter Test: add smile ${smileList}")
         notifyDataSetChanged() //Refresh Adapter 
     }
 
-    fun removeListItem(position : Int) {
-        if (smileList.size>0) {
-            notifyItemRemoved(position)
-            smileList.removeAt(smileList.size - 1)
+    fun removeSmile(smile: Smile) {
+        if (smileList.isNotEmpty()) {
+            smileList.remove(smile)
+            println("Adapter Test: remove smile ${smileList}")
             notifyDataSetChanged()
         }
     }
+
 }
