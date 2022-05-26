@@ -1,15 +1,17 @@
 package com.example.myapplication
 
+import java.util.*
+
 class Invoker () {
-    val listComand = mutableListOf<Command>()
+    val stackCommand = Stack<Command>()
     fun execute(command: Command) {
         command.execute()
-        listComand.add(command)
+        stackCommand.add(command)
     }
     fun unDo () {
-        if (listComand.isNotEmpty()){
-            listComand.last().unDo()
-            listComand.removeLast()
+        if (stackCommand.isNotEmpty()){
+            stackCommand.peek().unDo()
+            stackCommand.pop()
         }
     }
 }
