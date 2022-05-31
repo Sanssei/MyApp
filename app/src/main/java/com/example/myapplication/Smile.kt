@@ -1,3 +1,5 @@
 package com.example.myapplication
 
-data class Smile(val id: Int, val title: String, val imageResId: Int)
+import javax.inject.Inject
+
+data class Smile @Inject constructor(val id: Int, val title: String, val imageResId: Int)

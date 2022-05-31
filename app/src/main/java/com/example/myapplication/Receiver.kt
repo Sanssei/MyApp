@@ -1,8 +1,10 @@
 package com.example.myapplication
 
-class Receiver (val invoker: Invoker,
-                private val adapter: SmileAdapter,
-                private val smileFactory: SmailFactory) {
+import javax.inject.Inject
+
+class Receiver @Inject constructor(val invoker: Invoker,
+                                   val adapter: SmileAdapter,
+                private val smileFactory: SmileFactory) {
     fun add (index: Int) {
         invoker.execute(InsertCommand(adapter, smileFactory, index))
     }
@@ -13,4 +15,5 @@ class Receiver (val invoker: Invoker,
     fun unDo() {
         invoker.unDo()
     }
+    val smile = SmileFactory()
 }
