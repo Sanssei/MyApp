@@ -1,9 +1,8 @@
 package com.example.myapplication
 
 import java.util.*
-import javax.inject.Inject
 
-class Invoker @Inject constructor() {
+class Invoker {
     val stackCommand = Stack<Command>()
     fun execute(command: Command) {
         command.execute()

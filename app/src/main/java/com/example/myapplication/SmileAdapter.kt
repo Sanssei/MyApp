@@ -5,9 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.databinding.SmileItemBinding
+import javax.inject.Inject
 import javax.inject.Singleton
 
-class SmileAdapter constructor(): RecyclerView.Adapter<SmileAdapter.SmileHolder>() {
+class SmileAdapter : RecyclerView.Adapter<SmileAdapter.SmileHolder>() {
     var smileList = mutableListOf<Smile>()
     class SmileHolder(item: View): RecyclerView.ViewHolder(item){
         val binding = SmileItemBinding.bind(item)
